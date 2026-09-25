@@ -18,7 +18,7 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
     <meta name="generator" content={Astro.generator} />
 
     <!-- SEO Meta Tags -->
@@ -34,13 +34,13 @@ const {
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/imagen/foto.jpeg" />
+    <meta property="og:image" content={`${import.meta.env.BASE_URL}imagen/foto.jpeg`} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content="/imagen/foto.jpeg" />
+    <meta property="twitter:image" content={`${import.meta.env.BASE_URL}imagen/foto.jpeg`} />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -51,7 +51,7 @@ const {
     />
   </head>
   <body
-    class="bg-white text-slate-800 min-h-screen relative selection:bg-brand-100 selection:text-brand-800"
+    class="bg-white text-slate-800 min-h-screen relative selection:bg-brand-100 selection:text-brand-800 overflow-x-hidden w-full max-w-full"
   >
     <!-- Ambient Background Lighting for Light Theme -->
     <div
@@ -78,7 +78,7 @@ const {
     </div>
 
     <!-- Main Content Slot -->
-    <div class="relative z-10 flex flex-col min-h-screen">
+    <div class="relative z-10 flex flex-col min-h-screen w-full max-w-full overflow-x-hidden">
       <slot />
     </div>
 
