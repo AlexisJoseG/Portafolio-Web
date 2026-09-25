@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Skills from '../components/Skills.astro';
+import Projects from '../components/Projects.astro';
+import Education from '../components/Education.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Alexis Sierra | Desarrollador Frontend Junior"
+  description="Portafolio web profesional de Alexis Sierra, Desarrollador Frontend Junior especializado en TypeScript, Angular 19, Vue.js, Ionic y Tailwind CSS."
+>
+  <Navbar />
+  <main class="flex-grow">
+    <Hero />
+    <About />
+    <Skills />
+    <Projects />
+    <Education />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>

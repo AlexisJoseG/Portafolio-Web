@@ -1,0 +1,139 @@
+---
+const certifications = [
+  {
+    title: 'JavaScript - Nivel IV',
+    category: 'Lenguajes & Asincronía',
+    level: 'Avanzado',
+    iconGlow: 'hover:border-yellow-400 hover:shadow-yellow-500/10',
+    iconSvg: `<svg class="w-9 h-9 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#F7DF1E"/><path d="M6.5 16.8c.5.8 1.4 1.3 2.5 1.3 1.4 0 2.3-.7 2.3-2.4V8.5h2.2v7.4c0 2.6-1.6 3.9-4.3 3.9-2.1 0-3.5-.9-4.3-2.2l1.6-1.4zm11.2 1.3c.8.5 1.7.9 2.7.9 1.1 0 1.8-.5 1.8-1.3 0-.8-.7-1.2-2.2-1.8-2.2-.8-3.5-1.7-3.5-3.6 0-2.1 1.7-3.7 4.3-3.7 1.6 0 2.8.4 3.7 1.1l-1.3 1.7c-.6-.5-1.4-.7-2.3-.7-1.1 0-1.7.5-1.7 1.2 0 .7.6 1.1 2.2 1.7 2.4.9 3.5 1.9 3.5 3.7 0 2.3-1.8 3.8-4.5 3.8-2 0-3.4-.5-4.4-1.5l1.7-1.5z" fill="#000000"/></svg>`,
+    description: 'Dominio de ES6+, Promesas, Async/Await, manipulación del DOM, closures y arquitectura orientada a eventos.'
+  },
+  {
+    title: 'Angular - Nivel II',
+    category: 'Frameworks SPA',
+    level: 'Intermedio / Avanzado',
+    iconGlow: 'hover:border-red-400 hover:shadow-red-500/10',
+    iconSvg: `<svg class="w-9 h-9 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="none"><path d="M12 2L2.5 5.4l1.4 12.3L12 22l8.1-4.3 1.4-12.3L12 2z" fill="#E23237"/><path d="M12 2v20l8.1-4.3 1.4-12.3L12 2z" fill="#B52E31"/><path d="M12 4.8L5.9 17.5h2.4l1.2-3.1h4.9l1.2 3.1h2.4L12 4.8zm1.7 7.7h-3.4L12 7.8l1.7 4.7z" fill="#FFFFFF"/></svg>`,
+    description: 'Componentes Standalone, Angular Signals, RxJS, inyección de dependencias, rutas y consumo de APIs REST.'
+  },
+  {
+    title: 'HTML5 y CSS3 - Nivel III',
+    category: 'Maquetación Web',
+    level: 'Avanzado',
+    iconGlow: 'hover:border-orange-400 hover:shadow-orange-500/10',
+    iconSvg: `<svg class="w-9 h-9 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="none"><path d="M2.5 2h19l-1.8 17.8L12 22l-7.7-2.2L2.5 2z" fill="#E44D26"/><path d="M12 3.7v16.4l6.2-1.7 1.5-14.7H12z" fill="#F16529"/><path d="M12 7.8H7.4l.3 3.1h4.3V7.8zm0 5.4H7.8l.2 2.6 4 .9v-3.5zm0-8.6v.1h0z" fill="#EBEBEB"/><path d="M12 7.8h4.6l-.4 4.5H12v-1.4h3.1l.2-1.7H12V7.8zm0 5.4h2.9l-.3 3.3-2.6.7v1.4l4.2-1.1.7-6.9H12v2.6z" fill="#FFFFFF"/></svg>`,
+    description: 'HTML Semántico, CSS Grid, Flexbox, accesibilidad (a11y), responsive design y optimización visual.'
+  },
+  {
+    title: 'Lógica con Python - Nivel IV',
+    category: 'Algoritmos & Backend',
+    level: 'Avanzado',
+    iconGlow: 'hover:border-blue-400 hover:shadow-blue-500/10',
+    iconSvg: `<svg class="w-9 h-9 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="none"><path d="M11.9 2c-5 0-4.7 2.2-4.7 2.2l0 2.3h4.8v.7H5.2S2 7.6 2 12c0 4.4 2.8 4.2 2.8 4.2h1.6v-2.3s-.1-2.8 2.8-2.8h4.8s2.7-.1 2.7-2.6V4.6S17.2 2 11.9 2zm-2.6 1.7a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" fill="#3776AB"/><path d="M12.1 22c5 0 4.7-2.2 4.7-2.2l0-2.3h-4.8v-.7h6.8s3.2-.4 3.2-4.8c0-4.4-2.8-4.2-2.8-4.2h-1.6v2.3s.1 2.8-2.8 2.8H7.8s-2.7.1-2.7 2.6v4.1s-.5 2.5 4.8 2.5zm2.6-1.7a1 1 0 1 1 0-2 1 1 0 0 1 0-2z" fill="#FFD438"/></svg>`,
+    description: 'Estructuras de datos, resolución de problemas algorítmicos, scripts de automatización y fundamentos backend.'
+  },
+  {
+    title: 'Aplicaciones Híbridas (Ionic)',
+    category: 'Desarrollo Móvil',
+    level: 'Intermedio',
+    iconGlow: 'hover:border-sky-400 hover:shadow-sky-500/10',
+    iconSvg: `<svg class="w-9 h-9 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#3880FF" fill-opacity="0.18" stroke="#3880FF" stroke-width="1.6"/><circle cx="12" cy="12" r="4.8" fill="#3880FF"/><circle cx="17.2" cy="6.8" r="2.2" fill="#3880FF"/></svg>`,
+    description: 'Creación de aplicaciones móviles para iOS y Android con Ionic Framework, integración de plugins y Capacitor.'
+  },
+  {
+    title: 'Vue.js - Nivel I',
+    category: 'Frameworks SPA',
+    level: 'Fundamentos / Práctico',
+    iconGlow: 'hover:border-emerald-400 hover:shadow-emerald-500/10',
+    iconSvg: `<svg class="w-9 h-9 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="none"><path d="M2 3.5h4.2L12 13.2 17.8 3.5H22L12 20.5 2 3.5z" fill="#41B883"/><path d="M6.2 3.5h3.6L12 7.3l2.2-3.8h3.6L12 13.2 6.2 3.5z" fill="#34495E"/></svg>`,
+    description: 'Composition API, reactividad, componentes SFC, Vue Router y gestión de estado con Pinia.'
+  },
+  {
+    title: 'Framework CSS (Tailwind CSS)',
+    category: 'Estilos & UI',
+    level: 'Dominio',
+    iconGlow: 'hover:border-cyan-400 hover:shadow-cyan-500/10',
+    iconSvg: `<svg class="w-9 h-9 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="none"><path d="M12 6c-2.8 0-4.6 1.4-5.3 4.2 1-.9 2.2-1.4 3.5-1.3.8.1 1.4.7 2 1.3 1.1 1.1 2.3 2.3 5.8 2.3 2.8 0 4.6-1.4 5.3-4.2-1 .9-2.2 1.4-3.5 1.3-.8-.1-1.4-.7-2-1.3-1.1-1.1-2.3-2.3-5.8-2.3zm-6.5 6.5c-2.8 0-4.6 1.4-5.3 4.2 1-.9 2.2-1.4 3.5-1.3.8.1 1.4.7 2 1.3 1.1 1.1 2.3 2.3 5.8 2.3 2.8 0 4.6-1.4 5.3-4.2-1 .9-2.2 1.4-3.5 1.3-.8-.1-1.4-.7-2-1.3-1.1-1.1-2.3-2.3-5.8-2.3z" fill="#06B6D4"/></svg>`,
+    description: 'Diseño ultra-rápido, responsivo y mantenible con Tailwind CSS, utilidades avanzadas y diseño atómico.'
+  },
+  {
+    title: 'Preprocesadores CSS (SASS)',
+    category: 'Arquitectura CSS',
+    level: 'Especialización',
+    iconGlow: 'hover:border-pink-400 hover:shadow-pink-500/10',
+    iconSvg: `<svg class="w-9 h-9 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#CD6799" fill-opacity="0.18"/><path d="M18 7.5c-.5-.6-1.3-1-2.2-1-1.3 0-2.4.6-3 1.5-.6.9-.6 2.1-.2 3 .4.7 1.1 1.2 1.9 1.6.7.3 1.3.5 1.7.8.4.2.6.5.6.9 0 .5-.4.8-.9.8-.7 0-1.3-.3-1.7-.7l-1.1 1.3c.7.7 1.7 1.1 2.8 1.1 1.3 0 2.4-.6 2.9-1.6.5-.8.4-1.8-.2-2.5-.4-.5-1-.9-1.6-1.2-.7-.3-1.5-.6-1.9-1-.3-.3-.4-.5-.4-.8 0-.4.3-.7.7-.7.5 0 1.1.3 1.5.6l1.1-1.3zM7.2 10.5c-.5.6-.7 1.4-.4 2.2.3.7.8 1.3 1.5 1.6.6.3 1.4.5 1.9.9.4.2.6.5.6.9 0 .5-.4.9-1.1.9-.7 0-1.4-.4-1.9-.9l-1.2 1.3c.8.9 2 1.4 3.1 1.4 1.5 0 2.7-.9 3.1-2.2.4-1 .1-2.2-.6-3-.5-.6-1.3-1-2-1.3-.6-.3-1.2-.5-1.5-.8-.3-.2-.4-.4-.4-.7 0-.3.3-.7.7-.7.6 0 1.2.3 1.6.8l1.2-1.3c-.7-.8-1.8-1.2-2.8-1.2-1.1 0-2.1.5-2.6 1.4z" fill="#CD6799"/></svg>`,
+    description: 'Variables, mixins, anidamiento modular, herencia y arquitectura escalable utilizando SASS / SCSS.'
+  },
+  {
+    title: 'Programación Orientada a Objetos',
+    category: 'Paradigmas de Software',
+    level: 'Avanzado',
+    iconGlow: 'hover:border-blue-400 hover:shadow-blue-500/10',
+    iconSvg: `<svg class="w-9 h-9 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#023E7D" fill-opacity="0.15"/><path d="M12 3.5L4.5 7.8V16.2L12 20.5L19.5 16.2V7.8L12 3.5Z" stroke="#023E7D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 12L19.5 7.8M12 12V20.5M12 12L4.5 7.8" stroke="#023E7D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="2" fill="#023E7D"/></svg>`,
+    description: 'Encapsulamiento, herencia, polimorfismo, abstracción y principios SOLID aplicados al frontend.'
+  }
+];
+---
+
+<section data-aos="fade-right" 
+    data-aos-duration="1000"id="educacion" class="py-16 sm:py-24 relative bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
+     
+      <h2 class="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 tracking-tight">
+        Formación & Certificaciones
+      </h2>
+      <p class="text-slate-600 text-sm sm:text-base mt-2">
+        Validación técnica y especializaciones completadas con éxito.
+      </p>
+      <div class="w-16 h-1 bg-[#023e7d] mx-auto mt-3 rounded-full"></div>
+    </div>
+
+    <!-- Responsive Grid: 1 col on mobile, 2 on tablet, 3 on desktop -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {certifications.map((cert) => (
+        <div class={`glass-panel glass-panel-hover p-6 rounded-2xl border border-slate-200/90 bg-white flex flex-col justify-between group transition-all duration-300 shadow-sm ${cert.iconGlow}`}>
+          <div class="space-y-4">
+            <div class="flex items-center gap-4">
+              <!-- Large Technology Logo Container -->
+              <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center bg-slate-50 border border-slate-200 shadow-sm group-hover:scale-110 transition-all duration-300 p-2.5 flex-shrink-0">
+                <Fragment set:html={cert.iconSvg} />
+              </div>
+              
+              <div class="min-w-0 flex-1">
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-brand-700 transition-colors leading-tight">
+                  {cert.title}
+                </h3>
+                <p class="text-xs font-mono font-medium text-brand-700 mt-1">
+                  {cert.category}
+                </p>
+              </div>
+            </div>
+
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              {cert.description}
+            </p>
+          </div>
+
+          <div class="pt-4 mt-5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+            <span class="flex items-center gap-1.5 text-brand-700 font-semibold">
+              <svg class="w-4 h-4 text-brand-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="6" />
+                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+              </svg>
+              <span>Certificado</span>
+            </span>
+            <span class="px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-blue-50 text-brand-700 border border-blue-200">
+              {cert.level}
+            </span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+

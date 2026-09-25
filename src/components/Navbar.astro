@@ -1,0 +1,214 @@
+---
+const navLinks = [
+  { name: 'Inicio', href: '#inicio' },
+  { name: 'Sobre Mí', href: '#sobre-mi' },
+  { name: 'Habilidades', href: '#habilidades' },
+  { name: 'Proyectos', href: '#proyectos' },
+  { name: 'Educación', href: '#educacion' },
+  { name: 'Contacto', href: '#contacto' },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md bg-white/90 border-b border-slate-200/80 shadow-sm" id="navbar">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 sm:h-20">
+      
+      <!-- Logo / Brand (75px width) -->
+      <a href="#inicio" class="flex items-center gap-2.5 group focus:outline-none focus:ring-2 focus:ring-brand-700 rounded-xl p-1">
+        <div class="w-[75px] min-w-[75px] h-10 sm:h-11 rounded-xl bg-brand-50 border border-brand-200 flex items-center justify-center text-brand-700 font-mono font-bold text-base sm:text-lg group-hover:scale-105 group-hover:bg-[#023e7d] group-hover:text-white group-hover:border-[#023e7d] transition-all duration-200 shadow-sm">
+          &lt;AS/&gt;
+        </div>
+        <div class="flex flex-col justify-center">
+          <span class="font-bold text-slate-900 text-sm sm:text-base tracking-tight group-hover:text-brand-700 transition-colors">
+            Alexis Sierra
+          </span>
+          <span class="text-[11px] text-slate-500 font-semibold -mt-0.5 hidden xs:block">
+            Frontend Dev
+          </span>
+        </div>
+      </a>
+
+
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-1 lg:gap-2" aria-label="Navegación principal">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="nav-link px-3 py-2 text-sm font-medium text-slate-600 hover:text-brand-700 hover:bg-slate-100 rounded-lg transition-all"
+          >
+            {link.name}
+          </a>
+        ))}
+      </nav>
+
+      <!-- Action Button / CTA Desktop (Blue #023e7d with authentic colored WhatsApp icon) -->
+      <div class="hidden md:flex items-center gap-3">
+        <a
+          href="https://wa.me/584245202701?text=Hola%20Alexis,%20vi%20tu%20portafolio%20y%20me%20gustaría%20contactarte."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-[#023e7d] hover:bg-[#0353a4] rounded-lg transition-all transform active:scale-95 shadow-md shadow-brand-700/20"
+        >
+          <span>WhatsApp</span>
+          <svg class="w-4 h-4 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button (min 44px touch target) -->
+      <div class="flex items-center md:hidden">
+        <button
+          type="button"
+          id="mobile-menu-button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Abrir menú de navegación"
+          class="inline-flex items-center justify-center p-2.5 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-brand-700 min-w-[44px] min-h-[44px] transition-colors"
+        >
+          <!-- Hamburger Icon -->
+          <svg id="hamburger-icon" class="w-6 h-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!-- Close Icon -->
+          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white/98 backdrop-blur-xl px-4 pt-2 pb-6 space-y-1 shadow-lg transition-all">
+    {navLinks.map((link) => (
+      <a
+        href={link.href}
+        class="mobile-nav-link block px-4 py-3 rounded-lg text-base font-medium text-slate-700 hover:text-brand-700 hover:bg-slate-100 transition-all min-h-[44px] flex items-center"
+      >
+        {link.name}
+      </a>
+    ))}
+    <div class="pt-4 mt-2 border-t border-slate-200 px-2">
+      <a
+        href="https://wa.me/584245202701?text=Hola%20Alexis,%20vi%20tu%20portafolio%20y%20me%20gustaría%20contactarte."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center justify-center gap-2 w-full px-4 py-3 text-sm font-semibold text-white bg-[#023e7d] hover:bg-[#0353a4] rounded-lg min-h-[44px] transition-all shadow-md"
+      >
+        <span>Contactar por WhatsApp</span>
+        <svg class="w-4 h-4 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Mobile Menu Toggle
+  const menuBtn = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+  function toggleMenu() {
+    const isExpanded = menuBtn?.getAttribute('aria-expanded') === 'true';
+    menuBtn?.setAttribute('aria-expanded', (!isExpanded).toString());
+    mobileMenu?.classList.toggle('hidden');
+    hamburgerIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+  }
+
+  menuBtn?.addEventListener('click', toggleMenu);
+
+  // Close menu upon clicking any mobile link
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (!mobileMenu?.classList.contains('hidden')) {
+        toggleMenu();
+      }
+    });
+  });
+
+  // ScrollSpy Implementation
+  const desktopLinks = document.querySelectorAll<HTMLAnchorElement>('.nav-link');
+  const mobileNavLinks = document.querySelectorAll<HTMLAnchorElement>('.mobile-nav-link');
+  const sectionIds = ['inicio', 'sobre-mi', 'habilidades', 'proyectos', 'educacion', 'contacto'];
+
+  function updateScrollSpy() {
+    const scrollY = window.scrollY;
+    const scrollOffset = 200; // Offset for header height and comfortable visual reading line
+    const isBottom = window.innerHeight + scrollY >= document.documentElement.scrollHeight - 60;
+
+    let currentSectionId = '';
+
+    if (isBottom) {
+      currentSectionId = sectionIds[sectionIds.length - 1];
+    } else {
+      for (const id of sectionIds) {
+        const section = document.getElementById(id);
+        if (section) {
+          const top = section.offsetTop - scrollOffset;
+          const height = section.offsetHeight;
+          if (scrollY >= top && scrollY < top + height) {
+            currentSectionId = id;
+            break;
+          }
+        }
+      }
+    }
+
+    // Default to first section when near top
+    if (!currentSectionId && scrollY < 250) {
+      currentSectionId = sectionIds[0];
+    }
+
+    // Update Desktop Navigation
+    desktopLinks.forEach((link) => {
+      const href = link.getAttribute('href')?.replace('#', '');
+      const isActive = href === currentSectionId;
+      if (isActive) {
+        link.classList.add('text-brand-700', 'bg-slate-100', 'font-semibold');
+        link.classList.remove('text-slate-600');
+      } else {
+        link.classList.remove('text-brand-700', 'bg-slate-100', 'font-semibold');
+        link.classList.add('text-slate-600');
+      }
+    });
+
+    // Update Mobile Navigation
+    mobileNavLinks.forEach((link) => {
+      const href = link.getAttribute('href')?.replace('#', '');
+      const isActive = href === currentSectionId;
+      if (isActive) {
+        link.classList.add('text-brand-700', 'bg-slate-100', 'font-semibold');
+        link.classList.remove('text-slate-700');
+      } else {
+        link.classList.remove('text-brand-700', 'bg-slate-100', 'font-semibold');
+        link.classList.add('text-slate-700');
+      }
+    });
+  }
+
+  // Optimize scroll handler with requestAnimationFrame
+  let isTicking = false;
+  window.addEventListener('scroll', () => {
+    if (!isTicking) {
+      window.requestAnimationFrame(() => {
+        updateScrollSpy();
+        isTicking = false;
+      });
+      isTicking = true;
+    }
+  }, { passive: true });
+
+  window.addEventListener('resize', updateScrollSpy);
+  document.addEventListener('DOMContentLoaded', updateScrollSpy);
+  // Execute immediately
+  updateScrollSpy();
+</script>
+
